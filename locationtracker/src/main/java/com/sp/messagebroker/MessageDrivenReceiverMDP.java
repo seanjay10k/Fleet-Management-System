@@ -18,6 +18,12 @@ public class MessageDrivenReceiverMDP {
 		//automatically message is converted to string
 //		System.out.println(System.currentTimeMillis());
 //		if(1==1) throw new RuntimeException("lolol");
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		lQueue.addToQueue(msg);
 		System.out.println("im receiver"+msg);
 	}

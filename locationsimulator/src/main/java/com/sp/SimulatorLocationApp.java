@@ -14,6 +14,7 @@ public class SimulatorLocationApp {
 	{
 			//ConfigurableApplicationContext for event handling
 			//The whole reason for using ConfigurableApplicationContext is that 
+		try {
 			ConfigurableApplicationContext ctx = SpringApplication.run(SimulatorLocationApp.class);	
 
 			LocationSimulator sim = ctx.getBean(LocationSimulator.class);
@@ -46,7 +47,9 @@ public class SimulatorLocationApp {
 			
 			//invoke finish method in LocationSimulator that terminates all the threadpool
 			sim.finish();
-		
+		}catch(Exception e) {
+			throw e;
+		}
 		
 	}
 
